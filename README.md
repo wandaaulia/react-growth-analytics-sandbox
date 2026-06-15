@@ -5,11 +5,10 @@ GTM + GA4 implementation for ecommerce analytics using react-gtm-module
 
 
 ## Architecture 
+![Architecture Diagram](./docs/flowchart.png)
 
 
-
-
-# What's Implemented 
+## What's Implemented 
 ### Phase 1: Core Tracking (Live)
 - **Google Tag Manager** — Event collection & routing
 - **Google Analytics 4** — Real-time analytics dashboard
@@ -29,9 +28,9 @@ GTM + GA4 implementation for ecommerce analytics using react-gtm-module
 
 ## Key Technical Decisions
 ### 1. Why react-gtm-module? 
-Reason: Supports conditional initialization based on consent 
-Alternative considered: @next/third-parties (but injects during SSR, cannot be conditional)
-Result: GDPR-compliant, user consent respected
+- Reason: Supports conditional initialization based on consent 
+- Alternative considered: @next/third-parties (but injects during SSR, cannot be conditional)
+- **Result:** GDPR-compliant, user consent respected before tracking
 
 ## How to Setup
 ### 1. Environment Variables
@@ -61,11 +60,12 @@ npm run dev
 
 
 ## Metrics
+| Metric |
+|--------|
+| Website visitors |
+| Product views |
+| Add to cart |
+| Real-time tracking |
 
-| Metric | Value |
-|--------|-------|
-| Website visitors | 57 |
-| Product views | 14 |
-| Add to cart | 8 |
 
 

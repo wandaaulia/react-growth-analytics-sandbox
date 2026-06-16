@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 
 
@@ -7,6 +8,19 @@ interface ProductActionCardProps {
 }
 
 export default function ProductActionCard(props : ProductActionCardProps) {
+
+    const [count, setCount] = useState(1);
+
+    const addToCart = () => {
+      setCount(prev => prev + 1);
+    }
+
+    const RemoveFromCart = () => {
+      setCount(prev => {
+        if (prev <= 1) {
+          return prev;
+        } return prev - 1});
+    }
 
     return (
         <>
@@ -29,9 +43,9 @@ export default function ProductActionCard(props : ProductActionCardProps) {
         <div className="hidden lg:flex flex-col w-[250px] mx-auto mt-8 px-4 border border-gray-200 h-fit p-5 rounded-lg"> 
              <p> Jumlah </p>
               <div className="flex flex-row items-center mt-2">
-                <button className="w-8 h-8 rounded-lg border border-gray-300"> - </button>
-                <span className="mx-4"> 1 </span>
-                <button className="w-8 h-8 rounded-lg border border-gray-300"> + </button>
+                <button onClick={RemoveFromCart} className="cursor-pointer w-8 h-8 rounded-lg border border-gray-300"> - </button>
+                <span className="mx-4"> {count} </span>
+                <button onClick={addToCart} className="cursor-pointer w-8 h-8 rounded-lg border border-gray-300"> + </button>
               </div>
               <div className="w-full h-[0.2px] bg-gray-200 mt-3" />
               <div className="flex flex-row items-center justify-between mt-3">

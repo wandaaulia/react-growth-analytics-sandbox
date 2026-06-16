@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { trackEvent } from "../lib/gtm";
 import Breadcrumbs from "./Breadcrumbs";
 import ProductInfo from "../features/products/components/ProductInfo";
 import ProductActionCard from "../features/products/components/ProductActionCard";
 import ProductInfoHeader from "../features/products/components/ProductInfoHeader";
 import ProductImage from "../features/products/components/ProductImage";
+import { toast } from "sonner"
 
 export interface ProductType {
   id: number;
@@ -62,7 +62,7 @@ interface ProductDetailProps {
 export default function ProductDetail({ slug }: ProductDetailProps) {
   const [product, setProduct] = useState<ProductType>();
   const [loading, setLoading] = useState(false);
-
+  
   const url = "https://dummyjson.com/products/";
 
   useEffect(() => {
@@ -99,6 +99,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
         },
       ],
     });
+    toast.success("Added to Cart", { position: "top-center"})
   };
 
   if (!slug) {

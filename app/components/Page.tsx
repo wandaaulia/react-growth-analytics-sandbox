@@ -5,6 +5,7 @@ import { setConsent } from "../lib/gtm";
 import CookieBanner from "./CookingBanner";
 import { trackEvent } from "../lib/gtm";
 import { usePathname } from "next/navigation";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function Page({ children }: PropsWithChildren) {
   const pathname = usePathname();
@@ -39,8 +40,8 @@ export default function Page({ children }: PropsWithChildren) {
   return (
     <div className="min-h-full flex flex-col">
       {children}
-
       {!hasConsent && <CookieBanner onAccept={handleAccept} />}
+      <Toaster />
     </div>
   );
 }

@@ -170,9 +170,9 @@ export default function ListProducts() {
               <div>
                 <button
                   onClick={showMore}
-                  className="cursor-pointer mt-4 bg-[#E9B44C] rounded-xl text-white font-bold px-6 py-3 w-full"
+                  className="text-lg cursor-pointer mt-4 bg-[#E9B44C] rounded-xl text-white font-bold px-6 py-3 w-full"
                 >
-                  <span className="text-lg"> Show More </span>
+                   Show More 
                 </button>
               </div>
             )}

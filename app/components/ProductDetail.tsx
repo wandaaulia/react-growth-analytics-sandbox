@@ -154,7 +154,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
           </div>
           <ProductActionCard
             price={product.price}
-            handleAddToCart={handleAddToCart}
+            handleAddToCart={() => handleAddToCart()}
           />
         </div>
 

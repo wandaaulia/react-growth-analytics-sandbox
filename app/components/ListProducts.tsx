@@ -152,12 +152,10 @@ export default function ListProducts() {
                           <h3 className="text-sm lg:text-base m-0 p-0 w-full truncate font-semibold">
                             ${item.price}
                           </h3>
-                          <div className="flex flex-row items-center">
+                          <div className="flex flex-row items-center m-0 p-0 text-xs lg:text-sm text-gray-500">
                             <FaStar className="m-0 p-0 text-yellow-400 mr-1 w-3 h-3" />
-
-                            <span className="m-0 p-0 text-xs lg:text-sm text-gray-500">
                               {item.rating}
-                            </span>
+
                           </div>
                         </div>
                       </li>
